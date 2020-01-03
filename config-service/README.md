@@ -95,6 +95,56 @@ Result:
   ]
 }
 ```
+From post man you can query like below
+
+```
+
+http://localhost:8888/serviceB/local/master 
+
+{
+"name": "local",
+"label": "",
+"propertySources": [
+  {
+"name": "https://github.com/rajeshjaava/netflix-oss-example-config-repo/serviceB-local.properties",
+"source": {
+"info.description": "Repo - Server for service A",
+"info.name": "Repo - Service B",
+"default.message": "Repo - From local file"
+}
+},
+  {
+"name": "https://github.com/rajeshjaava/netflix-oss-example-config-repo/serviceB.properties",
+"source": {
+"default.message": "Repo - default file B"
+}
+},
+  {
+"name": "https://github.com/rajeshjaava/netflix-oss-example-config-repo/application.yml",
+"source": {
+"info.configuration": "Read From Config Service application.properties",
+"endpoints.restart.enabled": true,
+"endpoints.shutdown.enabled": true,
+"endpoints.health.sensitive": false,
+"logging.level.com.netflix.discovery": "OFF",
+"logging.level.org.springframework.cloud": "DEBUG",
+"server.tomcat.compression": true,
+"eureka.instance.leaseRenewalIntervalInSeconds": 10,
+"eureka.instance.leaseExpirationDurationInSeconds": 5,
+"eureka.instance.preferIpAddress": true,
+"eureka.instance.metadataMap.hostname": "${vcap.application.application_uris[0]}",
+"eureka.instance.metadataMap.instanceId": "${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value:0000}}}",
+"eureka.client.registerWithEureka": true,
+"eureka.client.fetchRegistry": true,
+"eureka.client.serviceUrl.defaultZone": "${INT_EUREKA_HOST:http://localhost:8761/eureka/}",
+"hystrix.stream.amqp.send-id": false
+}
+}
+],
+}
+```
+
+
 
 As you can see it returns the default configuration overridden by the local configuration.
 
