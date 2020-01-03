@@ -14,4 +14,4 @@ spring:
       enabled: true
       server:
         git:
-          uri: https://github.com/Oreste-Luci/netflix-oss-example-config-repo
+          uri: https://github.com/rajeshjaava/netflix-oss-example-config-repo
