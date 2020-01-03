@@ -24,7 +24,7 @@ java -jar target/config-service.jar
 
 This is the first file read by the application when is run. This file contains the name of the application and where to find the configuration files.
 
-The configuration files are stored in the following [git repository] (https://github.com/rajeshjaava/netflix-oss-example-config-repo).
+The configuration files are stored in the following [git repository] (https://https://github.com/rajeshjaava/netflix-oss-example-config-repo).
 
 ###application.yml
 
@@ -58,7 +58,7 @@ It should return something like this:
   "label": "",
   "propertySources": [
     {
-      "name": "https://github.com/rajeshjaava/springcloud-netflix-oss-poc/serviceB.properties",
+      "name": "https://github.com/rajeshjaava/netflix-oss-example-config-repo/serviceB.properties",
       "source": {
         "default.message": "From default file"
       }
@@ -81,13 +81,13 @@ Result:
   "label": "",
   "propertySources": [
     {
-      "name": "https://github.com/rajeshjaava/springcloud-netflix-oss-poc/serviceB-local.properties",
+      "name": "https://github.com/rajeshjaava/netflix-oss-example-config-repo/serviceB-local.properties",
       "source": {
         "default.message": "From local file"
       }
     },
     {
-      "name": "https://github.com/rajeshjaava/springcloud-netflix-oss-poc/serviceB.properties",
+      "name": "https://github.com/rajeshjaava/netflix-oss-example-config-repo/serviceB.properties",
       "source": {
         "default.message": "From default file"
       }
